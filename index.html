@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="output.css">
+    <script src="./frameworks/jquery-3.7.1.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.css" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/382a0b3e8b.js" crossorigin="anonymous"></script>
+
+    <script>
+        // On page load or when changing themes, best to add inline in `head` to avoid FOUC
+        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark')
+        }
+    </script>
+</head>
+<body class="bg-white dark:bg-gray-800">
+
+
+<nav class="bg-gray-100 border-gray-600 dark:bg-gray-900">
+<div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-10">
+<a href="https://flowbite.com/" class="flex items-center space-x-3 rtl:space-x-reverse">
+<img src="./pictures/Logo.png" class="h-12" alt="Flowbite Logo" id="imageToToggle">
+</a>
+<button data-collapse-toggle="navbar-default" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-default" aria-expanded="false">
+<span class="sr-only">Open main menu</span>
+<svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+</svg>
+</button>
+<div class="hidden w-full md:block md:w-auto" id="navbar-default">
+<ul class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-100 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-gray-100 dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+<li>
+<button id="theme-toggle" type="button" class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5">
+<svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+<svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+</button>
+</li>
+ </div>
+</nav>
+
+<div class="relative">
+    <img src="./pictures/promo-bg.jpg" class="w-full h-[480px] object-cover">
+    <div class="grid grid-cols-1 md:grid-cols-2 absolute top-0 left-0 right-0 bottom-0">
+        <div class="pt-24 pl-96">
+            <img src="./pictures/rietjes.png" class="h-[60%] lg:block hidden" alt="rietjes">
+        </div>
+        <div class="pt-32 ml-[25%] lg:ml-0">
+            <h1 class="text-white text-6xl">Onze rietjes</h1>
+            <p class="text-white text-3xl">
+                Duurzaam,<br>
+                Schoon & <br>
+                herbruikbaar
+            </p>
+        </div>
+    </div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-5 mx-[20%]">
+    <!-- First grid item -->
+    <div class="block text-center justify-center">
+        <div class="flex flex-col items-center justify-center">
+            <div class="flex w-[250px] h-[250px] rounded-full bg-blue-600 items-center justify-center">
+                <i class="fa-solid fa-recycle text-9xl text-gray-700"></i>
+            </div>
+            <p class="text-2xl font-bold text-blue-500 mt-3">Duurzaam</p>
+            <p class="text-sm mt-2 text-gray-600 dark:text-gray-300">Ons product word uiterst duurzaam geproduceerd.
+                Zo zorgen we niet voor onnodig veel vervuiling
+                Door onze productie</p>
+        </div>
+    </div>
+
+    <!-- Second grid item -->
+    <div class="block text-center justify-center">
+        <div class="flex flex-col items-center justify-center">
+            <div class="flex w-[250px] h-[250px] rounded-full bg-red-600 items-center justify-center">
+                <i class="fa-solid fa-soap text-9xl text-gray-700"></i>
+            </div>
+            <p class="text-2xl font-bold text-blue-500 mt-3">Schoon</p>
+            <p class="text-sm mt-2 text-gray-600 dark:text-gray-300">Ons product is lang te gebruiken en het zal bijna niet voorkomen dat deze vervangen moeten worden. Ze zijn goed schoon te maken met het meegeleverde stokje.</p>
+        </div>
+    </div>
+
+    <!-- Third grid item -->
+    <div class="block text-center justify-center">
+        <div class="flex flex-col items-center justify-center">
+            <div class="flex w-[250px] h-[250px] rounded-full bg-yellow-400 items-center justify-center">
+                <i class="fa-solid fa-money-bill text-9xl text-gray-700"></i>
+            </div>
+            <p class="text-2xl font-bold text-blue-500 mt-3">Herbruikbaar</p>
+            <p class="text-sm mt-2 text-gray-600 dark:text-gray-300">De herbruikbaarheden van onze rietjes zijn bijna oneindig, alle denkbare dingen zijn bijna wel te maken.</p>
+        </div>
+    </div>
+</div>
+
+<div class="mt-16">
+    <p class="text-black dark:text-white text-5xl ml-[20%]">Ons product</p>
+</div>
+
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-16 mx-[20%] justify-center items-center">
+    <div class="flex items-center">
+        <img src="./pictures/basket.png" alt="Image" class="w-full h-auto rounded-md hover:scale-110 hover:transform-all duration-300">
+    </div>
+
+    <div>
+        <h2 class="text-2xl font-bold mb-4 dark:text-white">De rietjes</h2>
+        <p class="text-gray-600 dark:text-gray-300">De rietjes
+            Onze rietjes zijn professioneel gemaakt en hebben kwaliteit, er is
+            onderzoek gedaan bij horeca ondernemers en die hebben ook
+            aangegegven graag met ons product te gaan werken. Ook zijn onze
+            rietjes getest door mensen in een panel en die hebben hun mening
+            gegeven waardoor we onze rietjes nog beter hebben kunnen verbeteren.
+            Onze rietjes zijn zelfs verkrijgbaar in meerdere kleuren en in aluminium.</p>
+    </div>
+</div>
+<footer class="bg-gray-100 text-white text-center py-4 border-t-3 dark:bg-gray-900 border-gray-600 mt-8">
+    <p class="text-black dark:text-white">Designed by Toon B. <a class="text-blue-600 dark:text-blue-400 underline" href="https://github.com/ToonB07">Github</a> / <a class="text-blue-600 dark:text-blue-400 underline" href="https://www.linkedin.com/in/toon-bouman-39922023b/">LinkedIn</a></p>
+</footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
+<script src="./js/darkmode.js"></script>
+</body>
+</html>
